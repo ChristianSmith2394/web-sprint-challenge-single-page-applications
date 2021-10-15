@@ -4,11 +4,13 @@ import PizzaForm from "./Components/PizzaForm";
 import axios from "axios";
 import * as yup from "yup";
 import formSchema from "./Validation/formSchema";
+import { Link, Route, Switch } from "react-router-dom";
 
 const initialFormValues = {
   size: "",
   sauce: "",
   toppings: "",
+  special: "",
   pepperoni: false,
   sausage: false,
   canadianBacon: false,
@@ -34,11 +36,10 @@ const initialOrders = [];
 const initialDisabled = true;
 
 const App = () => {
-
-  const [formValues, setFormValues] = useState(initialFormValues)
-  const [formErrors, setFormErrors] = useState(initialFormErrors)
-  const [disabled, setDisabled] = useState(initialDisabled)
-  const [orders, setOrders] = useState(initialOrders)
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(initialDisabled);
+  const [orders, setOrders] = useState(initialOrders);
 
   const getOrders = () => {
     axios
@@ -51,9 +52,9 @@ const App = () => {
       });
   };
 
-  const postNewOrder = (newFriend) => {
+  const postNewOrder = (newOrder) => {
     axios
-      .post("https://reqres.in/api/orders", newFriend)
+      .post("https://reqres.in/api/orders", newOrder)
       .then((res) => {
         setOrders([res.data, ...orders]);
       })
@@ -77,7 +78,7 @@ const App = () => {
     validate(name, value);
     setFormValues({
       ...formValues,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -86,9 +87,22 @@ const App = () => {
       size: formValues.size.trim(),
       sauce: formValues.sauce.trim(),
       special: formValues.role.trim(),
-      toppings: ["pepperoni", "sausage", "canadian-bacon", 'spicy-italian-sausage', 'grilled-chicken', 'onions', 'green-pepper', 'diced-tomatoes', 'black-olives', 'roasted-garlic', 'artichoke-hearts', 'three-cheese', 'pineapple', 'extra-cheese'].filter(
-        (topping) => !!formValues[topping]
-      ),
+      toppings: [
+        "pepperoni",
+        "sausage",
+        "canadian-bacon",
+        "spicy-italian-sausage",
+        "grilled-chicken",
+        "onions",
+        "green-pepper",
+        "diced-tomatoes",
+        "black-olives",
+        "roasted-garlic",
+        "artichoke-hearts",
+        "three-cheese",
+        "pineapple",
+        "extra-cheese",
+      ].filter((topping) => !!formValues[topping]),
     };
     console.log(newOrder);
     postNewOrder(newOrder);
@@ -103,11 +117,24 @@ const App = () => {
   // }, [formValues]);
 
   return (
-    <>
-      <h1>Smith Eats</h1>
-      <p>World's Best Pizza, from us to you!</p>
-      <Home />
-    </>
+    <div>
+      <nav>
+        <h1>Smith Eats</h1>
+        <p>World's Best Pizza, from us to you!</p>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/help">Help</Link>
+        </div>
+      </nav>
+      <Switch>
+      <Route>
+        <Home />
+      </Route>
+        <Route>
+          <PizzaForm />
+        </Route>
+      </Switch>
+    </div>
   );
 };
 export default App;
