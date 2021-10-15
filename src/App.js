@@ -90,18 +90,18 @@ const App = () => {
       toppings: [
         "pepperoni",
         "sausage",
-        "canadian-bacon",
-        "spicy-italian-sausage",
-        "grilled-chicken",
+        "canadianBacon",
+        "spicyItalianSausage",
+        "grilledChicken",
         "onions",
-        "green-pepper",
-        "diced-tomatoes",
-        "black-olives",
-        "roasted-garlic",
-        "artichoke-hearts",
-        "three-cheese",
+        "greenPepper",
+        "dicedTomatoes",
+        "blackOlives",
+        "roastedGarlic",
+        "artichokeHearts",
+        "threeCheese",
         "pineapple",
-        "extra-cheese",
+        "extraCheese",
       ].filter((topping) => !!formValues[topping]),
     };
     console.log(newOrder);
@@ -126,14 +126,18 @@ const App = () => {
           <Link to="/help">Help</Link>
         </div>
       </nav>
-      <Switch>
-      <Route>
-        <Home />
-      </Route>
-        <Route>
-          <PizzaForm />
+        <Route exact path={'/'}>
+          <Home />
         </Route>
-      </Switch>
+        <Route path={'/pizza'}>
+          <PizzaForm
+            values={formValues}
+            change={inputChange}
+            submit={formSubmit}
+            disabled={disabled}
+            errors={formErrors}
+          />
+        </Route>
     </div>
   );
 };
