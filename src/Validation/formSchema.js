@@ -10,6 +10,10 @@ const formSchema = yup.object().shape({
         .oneOf(['original-red', 'garlic-ranch', 'bbq', 'spinach-alfredo'], 'A sauce is required!'),
     special: yup
         .string(),
+    name: yup
+        .string()
+        .min(2, "name must be at least 2 characters")
+        .trim(),
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     canadianBacon: yup.boolean(),

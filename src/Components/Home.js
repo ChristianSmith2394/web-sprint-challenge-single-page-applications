@@ -10,14 +10,14 @@ export default function Home() {
     }
 
     return (
-        <div id='order-pizza'>
+        <div>
             <img
             className='home-page-img'
             src={pizzaPhoto}
             alt="Delicious pizza"
             />
             <button
-                onClick={routeToPizza}
+                id='order-pizza' onClick={routeToPizza}
             >Pizza?
             </button>
         </div>

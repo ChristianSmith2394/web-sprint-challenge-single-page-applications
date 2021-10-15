@@ -234,8 +234,19 @@ export default function PizzaForm(props) {
           />
         </label>
       </div>
-      <div id="order-button">
-        <button disabled={disabled}>Add to order</button>
+
+      <div >
+        <label id='name-input'>Name
+          <input
+            type='text'
+            name='name'
+            value={values.name}
+            onChange={onChange}
+          />
+        </label>
+      </div>
+      <div>
+        <button id="order-button" disabled={disabled}>Add to order</button>
 
         <div className="errors">
           <div>{errors.size}</div>

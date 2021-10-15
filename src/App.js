@@ -8,6 +8,7 @@ import { Link, Route, Switch } from "react-router-dom";
 
 const initialFormValues = {
   size: "",
+  name: '',
   sauce: "",
   toppings: "",
   special: "",
@@ -29,6 +30,7 @@ const initialFormValues = {
 
 const initialFormErrors = {
   size: "",
+  name: '',
   sauce: "",
 };
 
@@ -43,20 +45,19 @@ const App = () => {
 
 
   useEffect(() => {
-    console.log("FORM VALUES: ", formValues)
   }, [formValues])
 
 
-  const getOrders = () => {
-    axios
-      .get("http://buddies.com/api/friends")
-      .then((res) => {
-        setOrders(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+  // const getOrders = () => {
+  //   axios
+  //     .get("https://reqres.in/api/orders")
+  //     .then((res) => {
+  //       setOrders(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // };
 
   const postNewOrder = (newOrder) => {
     axios
@@ -92,6 +93,7 @@ const App = () => {
   const formSubmit = () => {
     const newOrder = {
       size: formValues.size.trim(),
+      name: formValues.name.trim(),
       sauce: formValues.sauce.trim(),
       special: formValues.special,
       toppings: [
@@ -115,9 +117,9 @@ const App = () => {
     postNewOrder(newOrder);
   };
 
-  useEffect(() => {
-    getOrders();
-  }, []);
+  // useEffect(() => {
+  //   getOrders();
+  // }, []);
 
   useEffect(() => {
     formSchema.isValid(formValues).then((valid) => setDisabled(!valid));
@@ -133,10 +135,10 @@ const App = () => {
           <Link to="/help">Help</Link>
         </div>
       </nav>
-        <Route exact path={'/'}>
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route path={'/pizza'}>
+        <Route path='/pizza'>
           <PizzaForm
             values={formValues}
             change={inputChange}
