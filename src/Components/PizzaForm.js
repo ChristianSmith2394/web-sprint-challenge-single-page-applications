@@ -19,7 +19,7 @@ export default function PizzaForm(props) {
     <form className="form-container" onSubmit={onSubmit}>
       <div>
         <h3>Build your own pizza</h3>
-        <img src={pizzaPhoto} alt="Delicious pizza" />
+        <img className='form-img' src={pizzaPhoto} alt="Delicious pizza" />
       </div>
       <div>
         <h2>Build your own Pizza!</h2>

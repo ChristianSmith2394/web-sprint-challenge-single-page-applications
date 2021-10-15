@@ -4,8 +4,6 @@ import pizzaPhoto from '../Pizza.jpg'
 
 export default function Home() {
 
-    const image = require('../Pizza.jpg')
-
     const history = useHistory()
     const routeToPizza = () => {
         history.push("/pizza")
