@@ -91,134 +91,134 @@ export default function PizzaForm(props) {
         <h2>Toppings</h2>
         <p>Choose up to 10</p>
       </div>
-
-      <label>
-        Pepperoni
-        <input
-          type="checkbox"
-          name="pepperoni"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Sausage
-        <input
-          type="checkbox"
-          name="sausage"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Canadian Bacon
-        <input
-          type="checkbox"
-          name="canadian-bacon"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Spicy Italian Sausage
-        <input
-          type="checkbox"
-          name="spicy-italian-sausage"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Grilled Chicken
-        <input
-          type="checkbox"
-          name="grilled-chicken"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Onions
-        <input
-          type="checkbox"
-          name="onions"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Green Pepper
-        <input
-          type="checkbox"
-          name="green-pepper"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Diced Tomatoes
-        <input
-          type="checkbox"
-          name="diced-tomatoes"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Black Olives
-        <input
-          type="checkbox"
-          name="black-olives"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Roasted Garlic
-        <input
-          type="checkbox"
-          name="roasted-garlic"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Artichoke Hearts
-        <input
-          type="checkbox"
-          name="artichoke-hearts"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Three Cheese
-        <input
-          type="checkbox"
-          name="three-cheese"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Pineapple
-        <input
-          type="checkbox"
-          name="pineapple"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-      <label>
-        Extra Cheese
-        <input
-          type="checkbox"
-          name="extra-cheese"
-          onChange={onChange}
-          checked={values.hiking}
-        />
-      </label>
-
+      <div>
+        <label>
+          Pepperoni
+          <input
+            type="checkbox"
+            name="pepperoni"
+            onChange={onChange}
+            checked={values.pepperoni}
+          />
+        </label>
+        <label>
+          Sausage
+          <input
+            type="checkbox"
+            name="sausage"
+            onChange={onChange}
+            checked={values.sausage}
+          />
+        </label>
+        <label>
+          Canadian Bacon
+          <input
+            type="checkbox"
+            name="canadian-bacon"
+            onChange={onChange}
+            checked={values.canadianBacon}
+          />
+        </label>
+        <label>
+          Spicy Italian Sausage
+          <input
+            type="checkbox"
+            name="spicy-italian-sausage"
+            onChange={onChange}
+            checked={values.spicyItalianSausage}
+          />
+        </label>
+        <label>
+          Grilled Chicken
+          <input
+            type="checkbox"
+            name="grilled-chicken"
+            onChange={onChange}
+            checked={values.grilledChicken}
+          />
+        </label>
+        <label>
+          Onions
+          <input
+            type="checkbox"
+            name="onions"
+            onChange={onChange}
+            checked={values.onions}
+          />
+        </label>
+        <label>
+          Green Pepper
+          <input
+            type="checkbox"
+            name="green-pepper"
+            onChange={onChange}
+            checked={values.greenPepper}
+          />
+        </label>
+        <label>
+          Diced Tomatoes
+          <input
+            type="checkbox"
+            name="diced-tomatoes"
+            onChange={onChange}
+            checked={values.dicedTomatoes}
+          />
+        </label>
+        <label>
+          Black Olives
+          <input
+            type="checkbox"
+            name="black-olives"
+            onChange={onChange}
+            checked={values.blackOlives}
+          />
+        </label>
+        <label>
+          Roasted Garlic
+          <input
+            type="checkbox"
+            name="roasted-garlic"
+            onChange={onChange}
+            checked={values.roastedGarlic}
+          />
+        </label>
+        <label>
+          Artichoke Hearts
+          <input
+            type="checkbox"
+            name="artichoke-hearts"
+            onChange={onChange}
+            checked={values.artichokeHearts}
+          />
+        </label>
+        <label>
+          Three Cheese
+          <input
+            type="checkbox"
+            name="three-cheese"
+            onChange={onChange}
+            checked={values.threeCheese}
+          />
+        </label>
+        <label>
+          Pineapple
+          <input
+            type="checkbox"
+            name="pineapple"
+            onChange={onChange}
+            checked={values.pineapple}
+          />
+        </label>
+        <label>
+          Extra Cheese
+          <input
+            type="checkbox"
+            name="extra-cheese"
+            onChange={onChange}
+            checked={values.extraCheese}
+          />
+        </label>
+      </div>
     </form>
   );
 }
