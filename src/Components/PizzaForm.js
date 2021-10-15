@@ -29,7 +29,7 @@ export default function PizzaForm(props) {
       </div>
       <div>
         <label>
-          <select onChange={onChange} values={values.role} name="role">
+          <select onChange={onChange} values={values.role} name="size">
             <option value="">--Select a size--</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -218,6 +218,28 @@ export default function PizzaForm(props) {
             checked={values.extraCheese}
           />
         </label>
+      </div>
+
+      <div>
+        <h2>Special instructions</h2>
+      </div>
+      <div>
+        <label>
+            <input
+                type='text'
+                name='special'
+                value={values.special}
+                onChange={onChange}
+            />
+        </label>
+      </div>
+      <div className='submit'>
+        <button disabled={disabled}>Add to order</button>
+
+        <div className='errors'>
+          <div>{errors.size}</div>
+          <div>{errors.sauce}</div>
+        </div>
       </div>
     </form>
   );
