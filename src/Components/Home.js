@@ -10,7 +10,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div id='order-pizza'>
             <img
             className='home-page-img'
             src={pizzaPhoto}

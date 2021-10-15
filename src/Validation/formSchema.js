@@ -9,22 +9,21 @@ const formSchema = yup.object().shape({
         .trim()
         .oneOf(['original-red', 'garlic-ranch', 'bbq', 'spinach-alfredo'], 'A sauce is required!'),
     special: yup
-        .string()
-        .trim(),
-        pepperoni: yup.boolean(),
-        sausage: yup.boolean(),
-        canadianBacon: yup.boolean(),
-        spicyItalianSausage: yup.boolean(),
-        grilledChicken: yup.boolean(),
-        onions: yup.boolean(),
-        greenPepper: yup.boolean(),
-        dicedTomatoes: yup.boolean(),
-        blackOlives: yup.boolean(),
-        roastedGarlic: yup.boolean(),
-        artichokeHearts: yup.boolean(),
-        threeCheese: yup.boolean(),
-        pineapple: yup.boolean(),
-        extraCheese: yup.boolean(),
+        .string(),
+    pepperoni: yup.boolean(),
+    sausage: yup.boolean(),
+    canadianBacon: yup.boolean(),
+    spicyItalianSausage: yup.boolean(),
+    grilledChicken: yup.boolean(),
+    onions: yup.boolean(),
+    greenPepper: yup.boolean(),
+    dicedTomatoes: yup.boolean(),
+    blackOlives: yup.boolean(),
+    roastedGarlic: yup.boolean(),
+    artichokeHearts: yup.boolean(),
+    threeCheese: yup.boolean(),
+    pineapple: yup.boolean(),
+    extraCheese: yup.boolean(),
 })
 
 export default formSchema

@@ -41,6 +41,12 @@ const App = () => {
   const [disabled, setDisabled] = useState(initialDisabled);
   const [orders, setOrders] = useState(initialOrders);
 
+
+  useEffect(() => {
+    console.log("FORM VALUES: ", formValues)
+  }, [formValues])
+
+
   const getOrders = () => {
     axios
       .get("http://buddies.com/api/friends")
@@ -76,6 +82,7 @@ const App = () => {
 
   const inputChange = (name, value) => {
     validate(name, value);
+    console.log("NAME: ", name, " VALUE: ", value)
     setFormValues({
       ...formValues,
       [name]: value,
@@ -86,7 +93,7 @@ const App = () => {
     const newOrder = {
       size: formValues.size.trim(),
       sauce: formValues.sauce.trim(),
-      special: formValues.role.trim(),
+      special: formValues.special,
       toppings: [
         "pepperoni",
         "sausage",
@@ -112,9 +119,9 @@ const App = () => {
     getOrders();
   }, []);
 
-  // useEffect(() => {
-  //   formSchema.isValid(formValues).then((valid) => setDisabled(!valid));
-  // }, [formValues]);
+  useEffect(() => {
+    formSchema.isValid(formValues).then((valid) => setDisabled(!valid));
+  }, [formValues]);
 
   return (
     <div>
