@@ -47,18 +47,6 @@ const App = () => {
   useEffect(() => {
   }, [formValues])
 
-
-  // const getOrders = () => {
-  //   axios
-  //     .get("https://reqres.in/api/orders")
-  //     .then((res) => {
-  //       setOrders(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // };
-
   const postNewOrder = (newOrder) => {
     axios
       .post("https://reqres.in/api/orders", newOrder)
@@ -116,10 +104,6 @@ const App = () => {
     console.log(newOrder);
     postNewOrder(newOrder);
   };
-
-  // useEffect(() => {
-  //   getOrders();
-  // }, []);
 
   useEffect(() => {
     formSchema.isValid(formValues).then((valid) => setDisabled(!valid));
