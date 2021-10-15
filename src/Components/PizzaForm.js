@@ -1,4 +1,5 @@
 import React from "react";
+import pizzaPhoto from '../Pizza.jpg'
 
 export default function PizzaForm(props) {
   const { values, submit, errors, disabled, change } = props;
@@ -18,7 +19,7 @@ export default function PizzaForm(props) {
     <form className="form-container" onSubmit={onSubmit}>
       <div>
         <h3>Build your own pizza</h3>
-        <img src="" alt="" />
+        <img src={pizzaPhoto} alt="Delicious pizza" />
       </div>
       <div>
         <h2>Build your own Pizza!</h2>
@@ -225,18 +226,18 @@ export default function PizzaForm(props) {
       </div>
       <div>
         <label>
-            <input
-                type='text'
-                name='special'
-                value={values.special}
-                onChange={onChange}
-            />
+          <input
+            type="text"
+            name="special"
+            value={values.special}
+            onChange={onChange}
+          />
         </label>
       </div>
-      <div className='submit'>
+      <div className="submit">
         <button disabled={disabled}>Add to order</button>
 
-        <div className='errors'>
+        <div className="errors">
           <div>{errors.size}</div>
           <div>{errors.sauce}</div>
         </div>

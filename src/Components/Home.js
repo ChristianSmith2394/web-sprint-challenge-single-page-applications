@@ -4,6 +4,8 @@ import pizzaPhoto from '../Pizza.jpg'
 
 export default function Home() {
 
+    const image = require('../Pizza.jpg')
+
     const history = useHistory()
     const routeToPizza = () => {
         history.push("/pizza")
@@ -13,7 +15,7 @@ export default function Home() {
         <div>
             <img
             className='home-page-img'
-            scr={pizzaPhoto}
+            src={pizzaPhoto}
             alt="Delicious pizza"
             />
             <button
